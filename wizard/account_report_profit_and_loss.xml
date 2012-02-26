@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+        <record id="form_profit_and_loss_wizard" model="ir.ui.view">
+          <field name="name">Profit and Loss</field>
+          <field name="model">account.profit_and_loss.report</field>
+          <field name="type">form</field>
+          <field name="inherit_id" ref="account.account_common_report_view" />
+          <field name="arch" type="xml">
+            <data>
+            <xpath expr="//field[@name='journal_ids']" position="replace">
+                <field name="journal_ids" colspan="4" nolabel="1" required="0" readonly="1"/>
+            </xpath>
+            <xpath expr="/form/label[@string='']" position="replace">
+                <separator string="Profit and Loss" colspan="4"/>
+            </xpath>
+            <xpath expr="//field[@name='target_move']" position="after">
+                <field name="display_account"/>
+                <newline/>
+                <field name="format_file"/>
+<!--
+                <field name="aging" on_change="onchange_aging(aging, fiscalyear_id)"/>
+                <field name="summary"/>
+-->
+                <field name="template" on_change="onchange_template(template, fiscalyear_id)"/>
+            </xpath>
+            <!--<xpath expr="//field[@name='target_move']" position="replace"></xpath>-->
+            </data>
+          </field>
+        </record>
+
+        <record id="action_profit_and_loss_wizard" model="ir.actions.act_window">
+            <field name="name">Profit and Loss</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.profit_and_loss.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="form_profit_and_loss_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                icon="STOCK_PRINT"
+                name="Profit And Loss"
+                parent="account.final_accounting_reports"
+                action="action_profit_and_loss_wizard"
+                id="account.menu_account_pl_report"
+               />
+
+    </data>
+</openerp>

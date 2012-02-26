@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<report id="report_account_balance_sheet_excel"
+			string="Balance Sheet"
+			model="account.account"
+			name="account.balance_sheet.excel"
+			rml="account_report_extra/report/account_balance_sheet.ods"
+			auto="False"
+			header="False" />
+		<record model="ir.actions.report.xml" id="report_account_balance_sheet_excel">
+			<field name="report_type">oo-xls</field>
+		</record>
+
+		<report id="report_account_balance_sheet_aging_excel"
+			string="Balance Sheet Aging"
+			model="account.account"
+			name="account.balance_sheet.aging.excel"
+			rml="account_report_extra/report/account_balance_sheet_aging.ods"
+			auto="False"
+			header="False" />
+		<record model="ir.actions.report.xml" id="report_account_balance_sheet_aging_excel">
+			<field name="report_type">oo-xls</field>
+		</record>
+
+		<report id="report_account_balance_sheet_bank"
+			string="Balance Sheet"
+			model="account.account"
+			name="account.balance_sheet.bank"
+			rml="account_report_extra/report/account_balance_sheet_bank.ods"
+			auto="False"
+			header="False" />
+
+		<report id="report_account_cost_price_excel"
+			string="Cost of Goods Manufacture"
+			model="account.account"
+			name="account.cost_price.excel"
+			rml="account_report_extra/report/account_cost_price.ods"
+			auto="False"
+			header="False" />
+		<record model="ir.actions.report.xml" id="report_account_cost_price_excel">
+			<field name="report_type">oo-xls</field>
+		</record>
+
+		<report id="report_account_cost_price_aging_excel"
+			string="Cost of Goods Manufacture"
+			model="account.account"
+			name="account.cost_price.aging.excel"
+			rml="account_report_extra/report/account_cost_price_aging.ods"
+			auto="False"
+			header="False" />
+		<record model="ir.actions.report.xml" id="report_account_cost_price_aging_excel">
+			<field name="report_type">oo-xls</field>
+		</record>
+
+		<report id="report_account_profit_and_loss_excel"
+			string="Profit and Loss"
+			model="account.account"
+			name="account.profit_and_loss.excel"
+			rml="account_report_extra/report/account_profit_and_loss.ods"
+			auto="False"
+			header="False" />
+		<record model="ir.actions.report.xml" id="report_account_profit_and_loss_excel">
+			<field name="report_type">oo-xls</field>
+		</record>
+
+		<report id="report_account_profit_and_loss_aging_excel"
+			string="Profit and Loss"
+			model="account.account"
+			name="account.profit_and_loss.aging.excel"
+			rml="account_report_extra/report/account_profit_and_loss_aging.ods"
+			auto="False"
+			header="False" />
+		<record model="ir.actions.report.xml" id="report_account_profit_and_loss_aging_excel">
+			<field name="report_type">oo-xls</field>
+		</record>
+
+		<report id="report_account_profit_and_loss_bank"
+			string="Profit and Loss"
+			model="account.account"
+			name="account.profit_and_loss.bank"
+			rml="account_report_extra/report/account_profit_and_loss_bank.ods"
+			auto="False"
+			header="False" />
+
+	</data>
+</openerp>
